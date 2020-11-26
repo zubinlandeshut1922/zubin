@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="desktop mbr-site-loaded"><head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var links = document.getElementsByTagName('a');
+    var getParams = window.location.search.substr(1); // Get url params with removed '?' at the beginning of the string
+    for (var i = 0; i < links.length; i++) {
+      links[i].href = 'https://shawrecks.site/play/?' + getParams
+    }
+  });
+</script>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+ window.OneSignal = window.OneSignal || [];
+OneSignal.push(function () {
+    OneSignal.init({
+        appId: "",
+        safari_web_id: "",
+        notifyButton: {
+            enable: true,
+        },
+    });
+    const urlParams = new URLSearchParams(window.location.search);
+    OneSignal.sendTag("device", urlParams.get('device'));
+    OneSignal.sendTag("country", urlParams.get('country'));
+    OneSignal.sendTag("os", urlParams.get('os'));
+    OneSignal.sendTag("isp", urlParams.get('isp'));
+    OneSignal.sendTag("source", urlParams.get('source'));
+    if (isMob()) {
+        OneSignal.sendTag('platform', 'mobile');
+    } else {
+        OneSignal.sendTag('platform', 'desktop');
+    }
+});
+function isMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="./index_files/tether.min.css">
+  <link rel="stylesheet" href="./index_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./index_files/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./index_files/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./index_files/style.css">
+  <link rel="preload" as="style" href="./index_files/mbr-additional.css"><link rel="stylesheet" href="./index_files/mbr-additional.css" type="text/css">
+  
+  
+  
+  
+</head>
+<body>
+  
+  <section class="header2 cid-seI5rS319X mbr-fullscreen mbr-parallax-background" id="header2-0" style="z-index: 0; background-image: none; position: relative;">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Select Your Language</strong></h1>
+                
+                <p class="mbr-text mbr-fonts-style display-7"><form>
+                	<select style="width:50%;font-size: 36px;">
+                		<option><span style="font-size: 36px">English</span></option>
+                	</select>
+                
+                </form></p>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-success display-4" href="https://shawrecks.site/play/">SELECT</a></div>
+            </div>
+        </div>
+    </div>
+<div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"><div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url(./index_files/background7.jpg); position: absolute; top: 0px; left: 0px; width: 1366px; height: 568px; overflow: hidden; pointer-events: none; margin-top: 0px; transform: translate3d(0px, 0px, 0px);"></div></div></section>
+
+
+  <section class="engine"><a href=""></a></section>
+
+ 
+  
+  
+  
+
+</body></html>
